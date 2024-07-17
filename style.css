@@ -8,7 +8,8 @@
     box-sizing: border-box;
 }
 
-/* Root values */
+
+/* Light Mode */
 :root {
     --container-color: #1a1e21;
     --second-color: rgba(77, 228, 255);
@@ -18,6 +19,57 @@
     --highlight-color: #FFD700;
     --link-hover-color: #FF4500;
 }
+
+/* Dark Mode */
+
+/* Style for the dark mode toggle icon */
+.theme-switch {
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-switch label {
+    display: inline-block;
+    font-size: 24px; /* Adjust size as needed */
+    color: #333; /* Initial color */
+    transition: color 0.3s;
+}
+
+.theme-switch label:hover {
+    color: #555; /* Hover color */
+}
+
+
+
+.dark-mode {
+    --container-color: #111;
+    --second-color: rgba(77, 228, 255);
+    --text-color: #fff;
+    --bg-color: #1a1e21;
+    --accent-color: #FF6347;
+    --highlight-color: #FFD700;
+    --link-hover-color: #FF4500;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Add specific styles for dark mode as needed */
+
+
+/* Root values */
+/* :root {
+    --container-color: #1a1e21;
+    --second-color: rgba(77, 228, 255);
+    --text-color: #172317;
+    --bg-color: #fff;
+    --accent-color: #FF6347;
+    --highlight-color: #FFD700;
+    --link-hover-color: #FF4500;
+} */
 
 ::selection {
     color: var(--bg-color);
@@ -57,7 +109,7 @@ section {
 }
 
 a {
-    color: #fff;
+    color: ;
 }
 
 /* Header */
@@ -191,15 +243,17 @@ header.shadow .logo {
     }
 }
 
+
+
 .titleText {
     font-weight: 600;
-    color: #111;
+    color: var(--text-color);
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
 .title-text {
-    color: #111;
+    color:var(--text-color);
     font-size: 1em;
 }
 
@@ -361,6 +415,66 @@ header.shadow .logo {
     border-radius: 50%;
     object-fit: cover;
 }
+
+
+/* further applied changes */
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.post-actions span {
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s, background-color 0.2s;
+    color: hsl(199, 98%, 56%);
+}
+
+.post-actions span:hover {
+    transform: scale(1.1);
+    background-color: #e7e7e7;
+    border-radius: 5px;
+}
+.liked {
+    color: hsl(199, 98%, 56%);
+}
+
+.comment-section {
+    display: none;
+    margin-top: 10px;
+}
+
+.comment-input {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.submit-comment {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: hsl(199, 98%, 56%);
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.submit-comment:hover {
+    transform: scale(1.1);
+    background-color: #e0e0e0;
+}
+
+.comments {
+    margin-top: 10px;
+    border-top: 1px solid #d7d7d7;
+    padding-top: 10px;
+}
+
+
+/* Footer */
 footer {
     background-color: #282828;
     color: #fff;
@@ -373,7 +487,6 @@ footer {
 
 .footer-container {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
@@ -445,6 +558,17 @@ footer {
 
 .footer-container .sec ul.info li span i {
     font-size: 1.2em;
+}
+
+@media (max-width: 1200px) {
+    .footer-container {
+        flex-wrap: wrap;
+    }
+
+    .footer-container .sec {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 768px) {
